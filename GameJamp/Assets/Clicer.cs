@@ -8,9 +8,8 @@ using static Unity.Collections.AllocatorManager;
 public class Clicer : MonoBehaviour
 {
     [SerializeField] int money;
-    public TMP_Text moneyText, obgectPrice;
-    public int price, access, Level;
-    public GameObject block;
+    public TMP_Text moneyText;
+
     private void Awake()
     {
 
