@@ -8,6 +8,7 @@ using static Unity.Collections.AllocatorManager;
 public class Clicer : MonoBehaviour
 {
     [SerializeField] int money;
+    [SerializeField] int count = 1;
     public TMP_Text moneyText;
 
     private void Awake()
@@ -18,7 +19,7 @@ public class Clicer : MonoBehaviour
     public void ButtonClick()
     {
         Debug.Log("Кнопку було натиснуто ");
-        money++;
+        money = money + count;
     }
 
     // Update is called once per frame
