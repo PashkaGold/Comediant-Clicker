@@ -3,11 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using static Unity.Collections.AllocatorManager;
+
 public class Clicer : MonoBehaviour
 {
     [SerializeField] int money;
-    public TMP_Text moneyText;
+    public TMP_Text moneyText, obgectPrice;
+    public int price, access, Level;
+    public GameObject block;
+    private void Awake()
+    {
 
+         PlayerPrefs.SetInt("money", 1000);
+    }
     public void ButtonClick()
     {
         Debug.Log("Кнопку було натиснуто ");
@@ -19,4 +27,7 @@ public class Clicer : MonoBehaviour
     {
         moneyText.text = money.ToString();
     }
-}
+
+   
+    }
+
