@@ -41,7 +41,9 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    height: 49.6
+    width: 839
+    height: 52
+  m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 20}
   m_Panes:
