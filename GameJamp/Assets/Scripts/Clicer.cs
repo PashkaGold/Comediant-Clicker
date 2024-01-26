@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using static Unity.Collections.AllocatorManager;
 
-public class Clicer : MonoBehaviour
+public class Clicker : MonoBehaviour
 {
     [SerializeField] int money;
     [SerializeField] int count = 1;
@@ -13,12 +12,20 @@ public class Clicer : MonoBehaviour
 
     private void Awake()
     {
-
-         PlayerPrefs.SetInt("money", 1000);
+        // Завантажуємо збережене значення money
+        money = PlayerPrefs.GetInt("money", 1000);
     }
+
+    private void OnApplicationQuit()
+    {
+        // Зберігаємо значення money при виході з гри
+        PlayerPrefs.SetInt("money", money);
+        PlayerPrefs.Save(); // Збереження змін у PlayerPrefs
+    }
+
     public void ButtonClick()
     {
-        Debug.Log("Кнопку було натиснуто ");
+        Debug.Log("Кнопку було натиснуто");
         money = money + count;
     }
 
@@ -27,7 +34,4 @@ public class Clicer : MonoBehaviour
     {
         moneyText.text = money.ToString();
     }
-
-   
-    }
-
+}
