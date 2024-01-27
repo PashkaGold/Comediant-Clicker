@@ -42,21 +42,28 @@ public class Upgrades : MonoBehaviour
         viewersButton.onClick.AddListener(UpgradeViewers);
         jokesButton.onClick.AddListener(UpgradeJokes);
 
-        workFieldImage = GameObject.Find("YourWorkFieldObjectName").GetComponent<Image>();
-        jokesButtonImage = jokesButton.GetComponent<Image>(); // Знайти компонент Image для jokesButton
-
-        // Ініціалізація списку спрайтів
-        spriteList = new List<Sprite>();
-        // Додайте ваші об'єкти Sprite до списку
-        spriteList.Add(Resources.Load<Sprite>("Sprite1")); // Замініть "Sprite1" на шлях до вашого спрайта
-        spriteList.Add(Resources.Load<Sprite>("Sprite2")); // Замініть "Sprite2" на шлях до іншого спрайта
-        // і так далі...
-
-        if (workFieldImage != null && spriteList.Count > 0)
+        // Перевірка, чи workFieldImage та jokesButton не є null перед отриманням компонентів Image
+        if (workFieldImage == null)
         {
-            // Встановлення початкового спрайту для робочого поля
+            Debug.LogError("workFieldImage не ініціалізовано! Перевірте правильність назви об'єкта в Scene.");
+        }
+        else
+        {
+            // Якщо workFieldImage не null, отримуємо компонент Image
             workFieldImage.sprite = spriteList[currentSpriteIndex];
         }
+
+        if (jokesButton == null)
+        {
+            Debug.LogError("jokesButton не ініціалізовано! Перевірте правильність назви об'єкта в Scene.");
+        }
+        else
+        {
+            // Якщо jokesButton не null, отримуємо компонент Image
+            jokesButtonImage = jokesButton.GetComponent<Image>();
+        }
+
+        
     }
 
     public void UpgradeCharisma()
