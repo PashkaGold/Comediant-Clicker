@@ -8,7 +8,7 @@ public class Upgrades : MonoBehaviour
     public TMP_Text textPriceCharizma;
     public TMP_Text textPriceViewers;
     public TMP_Text textPriceJokes;
-    
+
     public TMP_Text textInfoCharizma;
     public TMP_Text textInfoViewers;
     public TMP_Text textInfoJokes;
@@ -67,12 +67,12 @@ public class Upgrades : MonoBehaviour
             jokesButtonImage = jokesButton.GetComponent<Image>();
         }
 
-        
+
     }
 
     public void UpgradeCharisma()
     {
-        if (clicker.money >= charismaUpgradeCost)
+        if (clicker.money >= charismaUpgradeCost && charismaLevel < 4)
         {
             clicker.money -= charismaUpgradeCost;
             charismaLevel++;
@@ -84,7 +84,7 @@ public class Upgrades : MonoBehaviour
 
     public void UpgradeViewers()
     {
-        if (clicker.money >= viewersUpgradeCost)
+        if (clicker.money >= viewersUpgradeCost && viewersLevel < 4)
         {
             clicker.money -= viewersUpgradeCost;
             viewersLevel++;
@@ -105,7 +105,7 @@ public class Upgrades : MonoBehaviour
 
     public void UpgradeJokes()
     {
-        if (clicker.money >= jokesUpgradeCost)
+        if (clicker.money >= jokesUpgradeCost && jokesLevel < 4)
         {
             clicker.money -= jokesUpgradeCost;
             jokesLevel++;
