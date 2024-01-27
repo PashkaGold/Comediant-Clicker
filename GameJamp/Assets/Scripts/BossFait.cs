@@ -1,36 +1,42 @@
-using System.Collections;
 using UnityEngine;
+using System.Collections;
 
 public class BossFait : MonoBehaviour
-
-
 {
     private Renderer objectRenderer;
-    public float initialDelay = 2f; // Початкова затримка перед з'явленням
-    public float visibleDuration = 3f; // Тривалість видимості
-    public float invisibleDuration = 2f; // Тривалість невидимості
+    public float delayBeforeAppearance = 2f; // Затримка перед появою в секундах
+    public float visibilityDuration = 3f; // Тривалість видимості в секундах
 
     private void Start()
     {
         objectRenderer = GetComponent<Renderer>();
-        StartCoroutine(VisibilityRoutine());
+
+        if (objectRenderer != null)
+        {
+            // Запускаємо корутину для управління видимістю об'єкта
+            StartCoroutine(ManageVisibility());
+        }
+        else
+        {
+            Debug.LogError("Renderer не знайдено на об'єкті!");
+        }
     }
 
-    private IEnumerator VisibilityRoutine()
+    IEnumerator ManageVisibility()
     {
-        yield return new WaitForSeconds(initialDelay);
+        // Робимо об'єкт неактивним
+        gameObject.SetActive(false);
 
-        while (true)
-        {
-            // Зробити об'єкт видимимим
-            objectRenderer.enabled = true;
+        // Затримка перед появою
+        yield return new WaitForSeconds(delayBeforeAppearance);
 
-            yield return new WaitForSeconds(visibleDuration);
+        // Робимо об'єкт активним
+        gameObject.SetActive(true);
 
-            // Зробити об'єкт невидимимим
-            objectRenderer.enabled = false;
+        // Затримка перед зникненням
+        yield return new WaitForSeconds(visibilityDuration);
 
-            yield return new WaitForSeconds(invisibleDuration);
-        }
+        // Робимо об'єкт неактивним
+        gameObject.SetActive(false);
     }
 }
