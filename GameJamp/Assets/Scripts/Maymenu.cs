@@ -9,6 +9,10 @@ public class Maymeny : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
+    public void OpenMenu()
+    {
+        SceneManager.LoadScene(0);
+    }
     public void ExitGame()
     {
         Debug.Log("Ігра закрилась ");

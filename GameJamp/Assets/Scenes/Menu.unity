@@ -318,8 +318,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
-  - component: {fileID: 519420034}
   - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
@@ -402,49 +400,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 851e64af872c8b14194a95442b96bbad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  money: 0
-  moneyText: {fileID: 0}
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35b63effa888c894ea8453be54c91e4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textPriceCharizma: {fileID: 0}
-  textPriceViewers: {fileID: 0}
-  textPriceJokes: {fileID: 0}
-  charismaButton: {fileID: 0}
-  viewersButton: {fileID: 0}
-  jokesButton: {fileID: 0}
-  workFieldImage: {fileID: 0}
-  spriteList:
-  - {fileID: 21300000, guid: 6dfbc64b0bc8e1643ad6f49a7a4e5181, type: 3}
-  - {fileID: 21300000, guid: 092ffdc88cfc1434182a1a9c01141e3e, type: 3}
-  - {fileID: 21300000, guid: f3a15699b36d0af4ca9461498ac5cb35, type: 3}
-  jokesButtonImage: {fileID: 0}
-  newJokesSprites:
-  - {fileID: 21300000, guid: 4b1c6b08fe3cdfc4395aef1b85477121, type: 3}
-  - {fileID: 21300000, guid: a45d5101e800eed45a0e39a1999149c5, type: 3}
-  - {fileID: 21300000, guid: d64cdaf08061ba34ab6e5735b558d5d0, type: 3}
-  - {fileID: 21300000, guid: 2573c23a872ed434789160b8bc0cbbe8, type: 3}
 --- !u!82 &519420035
 AudioSource:
   m_ObjectHideFlags: 0
