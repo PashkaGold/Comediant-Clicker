@@ -715,7 +715,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 19746ccc92abd2c41a9b0355e9f2cdda, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 50017c076ad5e33468cd92c09bf34645, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1148,6 +1148,17 @@ MonoBehaviour:
   charismaButton: {fileID: 1873013451}
   viewersButton: {fileID: 1617694308}
   jokesButton: {fileID: 383550288}
+  workFieldImage: {fileID: 369171693}
+  spriteList:
+  - {fileID: 21300000, guid: 6dfbc64b0bc8e1643ad6f49a7a4e5181, type: 3}
+  - {fileID: 21300000, guid: 092ffdc88cfc1434182a1a9c01141e3e, type: 3}
+  - {fileID: 21300000, guid: f3a15699b36d0af4ca9461498ac5cb35, type: 3}
+  jokesButtonImage: {fileID: 383550289}
+  newJokesSprites:
+  - {fileID: 21300000, guid: 4b1c6b08fe3cdfc4395aef1b85477121, type: 3}
+  - {fileID: 21300000, guid: a45d5101e800eed45a0e39a1999149c5, type: 3}
+  - {fileID: 21300000, guid: d64cdaf08061ba34ab6e5735b558d5d0, type: 3}
+  - {fileID: 21300000, guid: 2573c23a872ed434789160b8bc0cbbe8, type: 3}
 --- !u!1 &567344289
 GameObject:
   m_ObjectHideFlags: 0
@@ -1980,7 +1991,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1089210944
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2487,8 +2498,8 @@ RectTransform:
   - {fileID: 1485538245}
   - {fileID: 307618973}
   - {fileID: 1835463058}
-  - {fileID: 1089210944}
   - {fileID: 369171692}
+  - {fileID: 1089210944}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
