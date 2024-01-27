@@ -72,7 +72,7 @@ public class Upgrades : MonoBehaviour
 
     public void UpgradeCharisma()
     {
-        if (clicker.money >= charismaUpgradeCost && charismaLevel < 4)
+        if (clicker.money >= charismaUpgradeCost)
         {
             clicker.money -= charismaUpgradeCost;
             charismaLevel++;
@@ -84,7 +84,7 @@ public class Upgrades : MonoBehaviour
 
     public void UpgradeViewers()
     {
-        if (clicker.money >= viewersUpgradeCost && viewersLevel < 4)
+        if (clicker.money >= viewersUpgradeCost)
         {
             clicker.money -= viewersUpgradeCost;
             viewersLevel++;
@@ -105,7 +105,7 @@ public class Upgrades : MonoBehaviour
 
     public void UpgradeJokes()
     {
-        if (clicker.money >= jokesUpgradeCost && jokesLevel < 4)
+        if (clicker.money >= jokesUpgradeCost)
         {
             clicker.money -= jokesUpgradeCost;
             jokesLevel++;
