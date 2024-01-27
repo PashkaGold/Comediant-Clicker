@@ -28,6 +28,6 @@ public class Clicker : MonoBehaviour
 
     private void Update()
     {
-        moneyText.text = money.ToString();
+        moneyText.text = $"{money.ToString()}/1000000";
     }
 }

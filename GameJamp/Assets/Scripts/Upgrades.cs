@@ -8,6 +8,10 @@ public class Upgrades : MonoBehaviour
     public TMP_Text textPriceCharizma;
     public TMP_Text textPriceViewers;
     public TMP_Text textPriceJokes;
+    
+    public TMP_Text textInfoCharizma;
+    public TMP_Text textInfoViewers;
+    public TMP_Text textInfoJokes;
 
     public Button charismaButton;
     public Button viewersButton;
@@ -17,9 +21,9 @@ public class Upgrades : MonoBehaviour
     public List<Sprite> spriteList; // Додано список спрайтів
     private int currentSpriteIndex = 0; // Змінна для відстеження поточного індексу спрайту
 
-    private int charismaLevel = 1;
-    private int viewersLevel = 1;
-    private int jokesLevel = 1;
+    private int charismaLevel = 0;
+    private int viewersLevel = 0;
+    private int jokesLevel = 0;
 
     private int charismaUpgradeCost = 100;
     private int viewersUpgradeCost = 200;
@@ -122,6 +126,10 @@ public class Upgrades : MonoBehaviour
 
     void UpdateUI()
     {
+        textInfoCharizma.text = $"Харизма \t {charismaLevel}/4";
+        textInfoJokes.text = $"Жарти \t {jokesLevel}/4";
+        textInfoViewers.text = $"Публіка \t {viewersLevel}/4";
+
         textPriceCharizma.text = "Ціна: " + charismaUpgradeCost.ToString();
         textPriceViewers.text = "Ціна: " + viewersUpgradeCost.ToString();
         textPriceJokes.text = "Ціна: " + jokesUpgradeCost.ToString();
