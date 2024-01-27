@@ -1,42 +1,53 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
-public class BossFait : MonoBehaviour
+public class ButtonVisibilityManager : MonoBehaviour
 {
-    private Renderer objectRenderer;
-    public float delayBeforeAppearance = 2f; // Затримка перед появою в секундах
-    public float visibilityDuration = 3f; // Тривалість видимості в секундах
-
-    private void Start()
+    [System.Serializable]
+    public class ButtonData
     {
-        objectRenderer = GetComponent<Renderer>();
+        public Button button;
+        public float delayBeforeAppearance = 2f;
+        public float visibilityDuration = 3f;
+    }
 
-        if (objectRenderer != null)
+    public List<ButtonData> buttonsToManage = new List<ButtonData>();
+
+    void Start()
+    {
+        StartCoroutine(ManageAllButtonsVisibility());
+    }
+
+    IEnumerator ManageAllButtonsVisibility()
+    {
+        foreach (var buttonData in buttonsToManage)
         {
-            // Запускаємо корутину для управління видимістю об'єкта
-            StartCoroutine(ManageVisibility());
-        }
-        else
-        {
-            Debug.LogError("Renderer не знайдено на об'єкті!");
+            if (buttonData.button == null)
+            {
+                Debug.LogError("Button не вказано в одному з об'єктів! Додайте Button до всіх об'єктів.");
+                yield break;
+            }
+
+            StartCoroutine(ManageButtonVisibility(buttonData));
         }
     }
 
-    IEnumerator ManageVisibility()
+    IEnumerator ManageButtonVisibility(ButtonData buttonData)
     {
-        // Робимо об'єкт неактивним
-        gameObject.SetActive(false);
+        // Затримка перед початковим появою
+        yield return new WaitForSeconds(buttonData.delayBeforeAppearance);
 
-        // Затримка перед появою
-        yield return new WaitForSeconds(delayBeforeAppearance);
-
-        // Робимо об'єкт активним
-        gameObject.SetActive(true);
+        // Робимо кнопку видимою та активною
+        buttonData.button.gameObject.SetActive(true);
+        buttonData.button.interactable = true;
 
         // Затримка перед зникненням
-        yield return new WaitForSeconds(visibilityDuration);
+        yield return new WaitForSeconds(buttonData.visibilityDuration);
 
-        // Робимо об'єкт неактивним
-        gameObject.SetActive(false);
+        // Робимо кнопку неактивною та невидимою
+        buttonData.button.interactable = false;
+        buttonData.button.gameObject.SetActive(false);
     }
 }
