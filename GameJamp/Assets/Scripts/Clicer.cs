@@ -4,7 +4,7 @@ using TMPro;
 public class Clicker : MonoBehaviour
 {
     public int money;
-    private int count = 1;
+
 
     public TMP_Text moneyText;
     private Upgrades upgrades;
