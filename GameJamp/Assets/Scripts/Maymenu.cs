@@ -13,6 +13,10 @@ public class Maymeny : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+    public void GoToBoss()
+    {
+        SceneManager.LoadScene(2);
+    }
     public void ExitGame()
     {
         Debug.Log("Ігра закрилась ");
