@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Maymeny : MonoBehaviour
+public class lvlTransition : MonoBehaviour
 {
-    public void ExitGame()
+    public void changeScene(int scene)
     {
-        Debug.Log("Ігра закрилась ");
-        Application.Quit();
+        SceneManager.LoadScene(scene);
     }
 }

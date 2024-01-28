@@ -82,10 +82,22 @@ public class Upgrades : MonoBehaviour
         textInfoJokes.text = $"Жарти \t {jokesLevel}/4";
         textInfoViewers.text = $"Публіка \t {viewersLevel}/4";
 
-        textPriceCharizma.text = "Ціна: " + FormatNumber(charismaUpgradeCosts[charismaLevel]);
-        textPriceViewers.text = "Ціна: " + FormatNumber(viewersUpgradeCosts[viewersLevel]);
-        textPriceJokes.text = "Ціна: " + FormatNumber(jokesUpgradeCosts[jokesLevel]);
+        if (charismaLevel < 4)
+            textPriceCharizma.text = "Ціна: " + FormatNumber(charismaUpgradeCosts[charismaLevel]);
+        else
+            textPriceCharizma.text = "Ціна: Max";
+
+        if (viewersLevel < 4)
+            textPriceViewers.text = "Ціна: " + FormatNumber(viewersUpgradeCosts[viewersLevel]);
+        else
+            textPriceViewers.text = "Ціна: Max";
+
+        if (jokesLevel < 4)
+            textPriceJokes.text = "Ціна: " + FormatNumber(jokesUpgradeCosts[jokesLevel]);
+        else
+            textPriceJokes.text = "Ціна: Max";
     }
+
 
     public int GetCount()
     {
